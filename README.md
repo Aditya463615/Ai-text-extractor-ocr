@@ -1,4 +1,3 @@
-![image](https://github.com/Aditya463615/Ai-text-extractor-ocr/assets/87667895/f100d081-772e-4ba6-8aa3-926ad4f42499)
 # Create your own OCR with the power of Ai
 `DocumentPro` is a powerful data extraction tool that **utilizes AI and GPT** for accurate data extraction from various documents. It’s particularly useful for **extracting data from financial, logistics, and ID documents**. Users can create custom parsers for any document, table, or form, enabling a wide variety of use cases.
 
