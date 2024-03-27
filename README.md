@@ -7,7 +7,53 @@ In addition, DocumentPro is a cloud-native document processing tool that uses AI
 
 
 # Building with python 
-- ```python
+### Creating Parser 
+```python
+# this is demo parser for Aadhar details extractor
+import requests
+import json
+
+url = "https://api.documentpro.ai/v1/templates"
+
+payload = json.dumps({
+  "template_title": "AadharFront",
+  "template_type": "identity card",
+  "template_schema": {
+    "fields": [
+      {
+        "name": "name",
+        "type": "text",
+        "description": "beside the image, in the middle row of id"
+      },
+      {
+        "name": "date of birth",
+        "type": "date",
+        "description": "beside the image, in the middle row of id"
+      },
+      {
+        "name": "aadhar",
+        "type": "number",
+        "description": "a 12 digit number on the bottom"
+      }
+    ]
+  }
+})
+
+headers = {
+  'x-api-key': '<api key>',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+# If the request was successful, status_code will be 200
+if response.status_code == 200:
+    print(json.loads(response.content)['template_id'])
+else:
+    print('Failed to create parser')
+```
+### Using Parser
+```python
 import requests
 import json
 import sys
@@ -18,7 +64,7 @@ apikey = '<api key>'
 url = f"https://api.documentpro.ai/files/upload/{parser_id}"
 payload = {}
 files=[
-    ('file',('file.jpeg', open(input('File: '),'rb'),'application/jpg'))
+    ('file',('file.jpeg', open('<file path>','rb'),'application/jpg'))
 ]
 headers = {
     'x-api-key': apikey
@@ -54,8 +100,8 @@ input('time to exit')
 ```
 ![Logo](https://www.documentpro.ai/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Flogo.10fd3587.png&w=256&q=75)
 ## Create Aadhar extractor parser 
-- `Aadhar extractor file` had been given in the resporatiory package as well as explained [above](#aadharextractor) too.
-- Remember to replace the variables [`<api key`](#Buildingwithpython) and [`<parser key>`](#Buildingwithpython) in your file.
+- `Aadhar extractor file` had been given in the resporatiory package as well as explained [above](###creatingparser) too.
+- Remember to replace the variables [`<file path>`](#Buildingwithpython), [`<api key`](#Buildingwithpython) and [`<parser id>`](#Buildingwithpython) in your file.
 ## Get your API key
 - visit [DocumentPro.ai](https://www.documentpro.ai/) website
 - sign in or sign up your account
