@@ -2,8 +2,8 @@ import requests
 import json
 import sys
 
-parser_id = "visit website"
-apikey = 'visit website
+parser_id = "<parser_id>"
+apikey = '<api key>'
 
 url = f"https://api.documentpro.ai/files/upload/{parser_id}"
 payload = {}
