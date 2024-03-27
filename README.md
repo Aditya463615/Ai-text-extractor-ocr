@@ -99,8 +99,8 @@ input('time to exit')
 ```
 ![Logo](https://www.documentpro.ai/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Flogo.10fd3587.png&w=256&q=75)
 ## Create Aadhar extractor parser 
-- `Aadhar extractor file` had been given in the resporatiory package as well as explained [above](###CreatingParser) too.
-- Remember to replace the variables [`<file path>`](###CreatingParser), [`<api key`](###CreatingParser) and [`<parser id>`](###UsingParser) in your file.
+- `Aadhar extractor file` had been given in the resporatiory package as well as explained [above](#creating-parser) too.
+- Remember to replace the variables [`<file path>`](#creating-parser), [`<api key`](#creating-parser) and [`<parser id>`](#using-parser) in your file.
 ## Get your API key
 - visit [DocumentPro.ai](https://www.documentpro.ai/) website
 - sign in or sign up your account
